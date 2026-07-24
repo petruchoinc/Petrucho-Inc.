@@ -1,0 +1,4 @@
+"tier","plan_id","price","id","created_date","updated_date","created_by_id","is_sample"
+"tier10","P-5BR59537WW3359612NJQUX7I","10","6a614bfdae080e90747960e2","2026-07-22T23:02:21.722000","2026-07-22T23:02:21.722000","service_8b4c8f99-9ce5-4f88-b8f3-bd965b5c3e61","false"
+"tier3","P-9H7289173A1888347NJQILHY","3","6a60859f272032851db9f2e0","2026-07-22T08:55:59.951000","2026-07-22T08:55:59.951000","service_8b4c8f99-9ce5-4f88-b8f3-bd965b5c3e61","false"
+"product","PROD-2LS73443JT326532K","0","6a60859fed679740c55c8024","2026-07-22T08:55:59.497000","2026-07-22T08:55:59.497000","service_8b4c8f99-9ce5-4f88-b8f3-bd965b5c3e61","false"

@@ -1,0 +1,29 @@
+{
+  "name": "Subscription",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "subscriber_email": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "default": "active"
+    },
+    "paypal_subscription_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "subscriber_email",
+    "tier"
+  ]
+}

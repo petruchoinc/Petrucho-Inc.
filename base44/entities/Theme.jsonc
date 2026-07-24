@@ -1,0 +1,32 @@
+{
+  "name": "Theme",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "grain_intensity": {
+      "type": "number",
+      "default": 40
+    },
+    "refraction_strength": {
+      "type": "number",
+      "default": 30
+    },
+    "grid_skew": {
+      "type": "number",
+      "default": 0
+    },
+    "primary_hue": {
+      "type": "number",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

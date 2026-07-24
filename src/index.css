@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 8% 90%;
+    --foreground: 0 0% 7%;
+    --card: 60 6% 93%;
+    --card-foreground: 0 0% 7%;
+    --popover: 60 6% 93%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 60 8% 90%;
+    --secondary: 60 5% 82%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 60 5% 82%;
+    --muted-foreground: 55 5% 32%;
+    --accent: 60 5% 82%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 60 8% 90%;
+    --border: 55 5% 70%;
+    --input: 55 5% 70%;
+    --ring: 0 0% 7%;
+    --radius: 2px;
+
+    --pi-bg: #E8E8E4;
+    --pi-ink: #121212;
+    --pi-ghost: #9D9D93;
+    --pi-grain: 0.4;
+    --pi-refract: 8px;
+    --pi-skew: 0deg;
+    --pi-hue: 0deg;
+
+    --font-heading: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    --sidebar-background: 60 6% 90%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 0 0% 7%;
+    --sidebar-primary-foreground: 60 8% 90%;
+    --sidebar-accent: 60 5% 82%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 55 5% 70%;
+    --sidebar-ring: 0 0% 7%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 60 8% 90%;
+    --card: 0 0% 9%;
+    --card-foreground: 60 8% 90%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 60 8% 90%;
+    --primary: 60 8% 90%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 60 8% 90%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 60 3% 65%;
+    --accent: 0 0% 16%;
+    --accent-foreground: 60 8% 90%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 60 8% 90%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 60 8% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: var(--pi-bg);
+    color: var(--pi-ink);
+    @apply font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    background: var(--pi-ink);
+    color: var(--pi-bg);
+  }
+}
+
+@layer utilities {
+  .pi-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.86;
+  }
+  .pi-mono-label {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+  }
+  .pi-glass {
+    background: rgba(232, 232, 228, 0.62);
+    backdrop-filter: blur(var(--pi-refract)) saturate(1.2);
+    -webkit-backdrop-filter: blur(var(--pi-refract)) saturate(1.2);
+  }
+  .pi-skew-img {
+    transform: skewX(var(--pi-skew));
+  }
+  .pi-ticker {
+    animation: pi-marquee 38s linear infinite;
+  }
+  .pi-fade-up {
+    animation: pi-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .pi-stamp {
+    border: 1px solid var(--pi-ink);
+    box-shadow: 4px 4px 0 0 var(--pi-ink);
+  }
+}
+
+@keyframes pi-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pi-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pi-cursor {
+  will-change: transform;
+}
+.pi-cursor-ring {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border: 1px solid var(--pi-bg);
+  border-radius: 9999px;
+  box-shadow: 0 0 0 1px rgba(18,18,18,0.4) inset;
+}
+@media (pointer: coarse) {
+  .pi-cursor { display: none !important; }
+}
+
+/* range slider — industrial */
+input[type="range"].pi-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: var(--pi-ink);
+  width: 100%;
+}
+input[type="range"].pi-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--pi-ink);
+  border: 2px solid var(--pi-bg);
+  cursor: pointer;
+}
+input[type="range"].pi-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--pi-ink);
+  border: 2px solid var(--pi-bg);
+  cursor: pointer;
+  border-radius: 0;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "PaypalPlan",
+  "type": "object",
+  "properties": {
+    "tier": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "tier",
+    "plan_id"
+  ]
+}

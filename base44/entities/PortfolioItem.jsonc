@@ -1,0 +1,49 @@
+{
+  "name": "PortfolioItem",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video",
+        "audio",
+        "text"
+      ],
+      "default": "image"
+    },
+    "media_url": {
+      "type": "string"
+    },
+    "text_content": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "default": "archive"
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

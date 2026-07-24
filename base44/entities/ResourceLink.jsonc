@@ -1,0 +1,19 @@
+{
+  "name": "ResourceLink",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "label",
+    "url"
+  ]
+}
